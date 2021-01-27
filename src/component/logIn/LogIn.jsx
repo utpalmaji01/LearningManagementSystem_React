@@ -109,6 +109,7 @@ class LogIn extends Component {
         password: this.state.password,
       };
       console.log(logInObj);
+      localStorage.setItem("adminId","34hjj3");
     }
   };
   render() {
