@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import history from "../../History.js";
 import loginImg from "../../assets/image/login.png";
 import lms from "../../assets/image/lms.png";
-import "./logIn.scss";
 import {
   TextField,
   Typography,
@@ -12,6 +11,8 @@ import {
 } from "@material-ui/core";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import history from "../../History.js";
+import "./logIn.scss";
 class LogIn extends Component {
   constructor(props) {
     super(props);
@@ -109,7 +110,8 @@ class LogIn extends Component {
         password: this.state.password,
       };
       console.log(logInObj);
-      localStorage.setItem("adminId","34hjj3");
+      localStorage.setItem("adminId", "34hjj3");
+      history.push("/dashboard/main");
     }
   };
   render() {

@@ -11,11 +11,11 @@ export default class Routes extends Component {
       <Router history={history}>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/dashboard" component={Dashboard} />
+            <Redirect to="/dashboard/main" component={() => <Dashboard />} />
           </Route>
           <Route exact path="/logIn" component={LogIn} />
           <PrivateRoute
-            exact={true}
+            exact={false}
             path="/dashboard"
             redirectPath="/logIn"
             condition={

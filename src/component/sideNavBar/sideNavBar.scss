@@ -1,0 +1,22 @@
+@import "../../colors";
+@import "../../breakPoints";
+
+.sideNavBar-container {
+  .sideNavBar-list {
+    .sideNav-list-item {
+      box-sizing: border-box;
+      border-left: 5px solid $color-white;
+      .list-item-icon {
+        min-width: 30px;
+      }
+      .list-item-icon.list-item-icon-active {
+        color: $color-sidenav-active-border;
+      }
+    }
+    .sideNav-list-item.sideNav-list-item-active {
+      color: $color-sidenav-active-border;
+      border-left: 5px solid $color-sidenav-active-border;
+      background-color: $color-sidenav-active-background;
+    }
+  }
+}

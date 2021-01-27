@@ -23,12 +23,6 @@
       @media screen and (max-width: $break-medium) {
         width: 37%;
       }
-    //   @media screen and (max-width: $break-small) {
-    //     width: 45%;
-    //   }
-    //   @media screen and (max-width: $break-xsmall) {
-    //     width: 60%;
-    //   }
     }
   }
   .app-prifile-button {
@@ -49,6 +43,29 @@
         float: right;
         background-color: $appbar-profile-button-background-color;
       }
+    }
+  }
+}
+.profile-card {
+  position: absolute;
+  right: 25px;
+  .profile-contant {
+    display: flex;
+    align-items: center;
+    .person-picture {
+      .person-image {
+        width: 30px;
+      }
+    }
+    .profile-contant-details {
+      margin: 0 0 0 10px;
+    }
+  }
+  .profile-card-actions {
+    .logout {
+      background-color: $color-button;
+      color: $color-white;
+      text-transform: none;
     }
   }
 }

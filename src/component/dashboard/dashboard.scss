@@ -16,7 +16,9 @@
     display: flex;
     .dashboard-side-navbar {
       width: 20%;
+      height: calc(100% - 65px);
       position: fixed;
+      border-right: 1px solid $color-lightgray;
       @media screen and (max-width: $break-small) {
         width: 30%;
       }
