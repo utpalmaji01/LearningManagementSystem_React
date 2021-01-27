@@ -1,8 +1,11 @@
-import Routes from "./Routes.js"
+import Routes from "./Routes.js";
+import ErrorBoundary from "./component/ErrorBoundary.jsx";
 function App() {
   return (
     <div className="App">
-      <Routes/>
+      <ErrorBoundary>
+        <Routes />
+      </ErrorBoundary>
     </div>
   );
 }

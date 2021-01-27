@@ -4,6 +4,8 @@ import AppBar from "../appBar/Appbar.jsx";
 import SidenavBar from "../sideNavBar/SidenavBar.jsx";
 import MainDashboard from "../mainDashboard/MainDashboard.jsx";
 import Mentor from "../mentor/Mentor.jsx";
+import Student from "../student/Student.jsx";
+import Course from "../course/Course.jsx";
 import "./dashboard.scss";
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState("DashBoard");
@@ -23,8 +25,8 @@ const Dashboard = () => {
           <Switch>
             <Route path="/dashboard/main" component={() => <MainDashboard />} />
             <Route path="/dashboard/Mentor" component={() => <Mentor />} />
-            <Route path="/dashboard/Student" component={() => <Mentor />} />
-            <Route path="/dashboard/Course" component={() => <Mentor />} />
+            <Route path="/dashboard/Student" component={() => <Student />} />
+            <Route path="/dashboard/Course" component={() => <Course />} />
           </Switch>
         </div>
       </div>
