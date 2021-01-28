@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./component/logIn/LogIn.jsx";
-import Dashboard from "./component/dashboard/Dashboard.jsx";
+import Dashboard from "./component/dashboard/dashboard.jsx";
 import PrivateRoute from "./component/PrivateRoute.jsx";
 import history from "./History.js";
 
