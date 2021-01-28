@@ -1,0 +1,71 @@
+@import "../../colors";
+@import "../../breakPoints";
+
+.appbar-container {
+  height: 75px;
+  border-bottom: 1px solid $color-lightgray;
+  display: flex;
+  .app-picture {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid $color-lightgray;
+    @media screen and (max-width: $break-small) {
+      width: 30%;
+    }
+    @media screen and (max-width: $break-xsmall) {
+      width: 40%;
+    }
+    .lms-logo {
+      width: 30%;
+      height: 90%;
+      @media screen and (max-width: $break-medium) {
+        width: 37%;
+      }
+    }
+  }
+  .app-prifile-button {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $break-small) {
+      width: 70%;
+    }
+    @media screen and (max-width: $break-xsmall) {
+      width: 60%;
+    }
+    .appbar-action-button {
+      width: 90%;
+      margin: 0 auto;
+      .profile-icon-button {
+        padding: 8px;
+        float: right;
+        background-color: $appbar-profile-button-background-color;
+      }
+    }
+  }
+}
+.profile-card {
+  position: absolute;
+  right: 25px;
+  .profile-contant {
+    display: flex;
+    align-items: center;
+    .person-picture {
+      .person-image {
+        width: 30px;
+      }
+    }
+    .profile-contant-details {
+      margin: 0 0 0 10px;
+    }
+  }
+  .profile-card-actions {
+    .logout {
+      background-color: $color-button;
+      color: $color-white;
+      text-transform: none;
+    }
+  }
+}

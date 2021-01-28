@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./component/logIn/LogIn.jsx";
-import Dashboard from "./component/dashboard/dashboard.jsx"
-import history from "./History.js"; 
+import Dashboard from "./component/dashboard/Dashboard.jsx";
+import PrivateRoute from "./component/PrivateRoute.jsx";
+import history from "./History.js";
 
 export default class Routes extends Component {
   render() {
@@ -10,10 +11,19 @@ export default class Routes extends Component {
       <Router history={history}>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/logIn" component={LogIn} />
+            <Redirect to="/dashboard/main" component={() => <Dashboard />} />
           </Route>
           <Route exact path="/logIn" component={LogIn} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute
+            exact={false}
+            path="/dashboard"
+            redirectPath="/logIn"
+            condition={
+              localStorage.getItem("adminId") &&
+              localStorage.getItem("adminId").length
+            }
+            component={() => <Dashboard />}
+          />
         </Switch>
       </Router>
     );
