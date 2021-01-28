@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./component/logIn/LogIn.jsx";
+import Mentor from "./component/mentor/Mentor.jsx";
 import history from "./History.js"; 
 
 export default class Routes extends Component {
@@ -11,7 +12,7 @@ export default class Routes extends Component {
           <Route exact path="/">
             <Redirect to="/logIn" component={LogIn} />
           </Route>
-          <Route exact path="/logIn" component={LogIn} />
+          <Route exact path="/mentor" component={Mentor} />
         </Switch>
       </Router>
     );
