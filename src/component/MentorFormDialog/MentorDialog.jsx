@@ -29,6 +29,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
   return (
     <div id="dialogContainer" >
       <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title">
+        <div className="addMentor" >Add Mentor</div>
+        <div className="fullDialog" >
         <DialogContent>
         <TextField
           label="Mentor ID"
@@ -75,13 +77,14 @@ import DialogTitle from '@material-ui/core/DialogTitle';
       </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.handleClose} color="primary">
+          <Button onClick={props.handleClose} id="cancel" >
             Cancel
           </Button>
-          <Button onClick={props.handleClose} color="primary">
+          <Button onClick={props.handleClose} id="addBtn" >
             ADD
           </Button>
         </DialogActions>
+        </div>
       </Dialog>
     </div>
   );
