@@ -1,0 +1,124 @@
+@import "../../colors";
+@import "../../breakPoints";
+
+.perticular-cource {
+  .perticular-cource-header {
+    margin: 0 0 20px;
+    display: flex;
+    .go-to-dashboard {
+      cursor: pointer;
+    }
+  }
+  .perticular-cource-details {
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+    }
+    .cource-mentors {
+      border-radius: 10px;
+      width: 59%;
+      background-color: $color-white;
+      border: 1px solid $color-lightgray;
+      box-sizing: border-box;
+      padding: 2%;
+      @media screen and (max-width: $break-small) {
+        width: 100%;
+        margin: 0 0 2% 0;
+      }
+      .cource-mentors-header {
+        margin: 0 0 20px;
+      }
+      .all-mentors {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: 60vh;
+        overflow-y: auto;
+        @media screen and (max-width: $break-small) {
+            max-height: 76vh;
+          }
+        .each-mentor {
+          border-radius: 10px;
+          background-color: #f2f2f2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 15px;
+          box-sizing: border-box;
+          margin: 1%;
+          width: 31%;
+          position: relative;
+          @media screen and (max-width: $break-medium) {
+            width: 48%;
+          }
+          @media screen and (max-width: $break-xsmall) {
+            width: 98%;
+          }
+          .each-mentor-action-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            .mentor-delete {
+              padding: 2px;
+            }
+          }
+          .each-mentor-picture {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            background-color: aqua;
+          }
+          .each-mentor-details {
+            margin: 10px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .each-mentor-id {
+              text-align: center;
+            }
+            .each-mentor-name {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .cource-students {
+      border-radius: 10px;
+      width: 39%;
+      background-color: $color-white;
+      border: 1px solid $color-lightgray;
+      box-sizing: border-box;
+      padding: 2%;
+      @media screen and (max-width: $break-small) {
+        width: 100%;
+      }
+      .cource-students-header {
+        margin: 0 0 20px;
+      }
+      .all-student {
+        display: flex;
+        flex-direction: column;
+        max-height: 60vh;
+        overflow-y: auto;
+        .each-student {
+          display: flex;
+          align-items: center;
+          background-color: #f2f2f2;
+          padding: 8px;
+          box-sizing: border-box;
+          margin: 1%;
+        }
+      }
+    }
+  }
+}

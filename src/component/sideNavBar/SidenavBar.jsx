@@ -20,7 +20,7 @@ class SidenavBar extends Component {
   render() {
     return (
       <div className="sideNavBar-container">
-        <List dense component="nav" className="sideNavBar-list">
+        <List component="nav" className="sideNavBar-list">
           <ListItem
             button
             onClick={(e) => this.navigate(e, "DashBoard")}
