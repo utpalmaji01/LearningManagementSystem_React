@@ -26,6 +26,7 @@ import FormControl from '@material-ui/core/FormControl';
   return (
     <div id="dialogContainer" >
       <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title">
+        <div className="mentor-content-inner-dialog-box">
         <DialogContent>
         <TextField
           label="Mentor ID"
@@ -79,6 +80,7 @@ import FormControl from '@material-ui/core/FormControl';
             ADD
           </Button>
         </DialogActions>
+        </div>
       </Dialog>
     </div>
   );
