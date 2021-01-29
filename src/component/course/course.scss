@@ -1,3 +1,7 @@
+.outer-container-course {
+  width: 90%;
+  margin: 0 auto;
+}
 .box-content-course {
   width: 431px;
   height: 285px;
@@ -53,13 +57,12 @@
     width: 100%;
     padding: 4px;
     height: 64%;
-    Button{
-        padding: 0 !important;
-        height: 29px !important;
+    Button {
+      padding: 0 !important;
+      height: 29px !important;
     }
     .course-card-title {
       font-size: 16px;
-      
     }
   }
 

@@ -8,9 +8,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 
  const MentorDialog = (props) => {
     const [state, setState] = React.useState({

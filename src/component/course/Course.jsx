@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./course.scss";
+
 class Course extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +42,7 @@ class Course extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="outer-container-course">
         <Dialog
           open={this.state.openDialog}
           onClose={this.handleClose}
@@ -118,37 +119,7 @@ class Course extends React.Component {
                   delete
                 </MenuItem>
               </Menu>
-              {/* <Popper
-                open={open}
-                anchorEl={anchorRef.current}
-                role={undefined}
-                transition
-                disablePortal
-              >
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    style={{
-                      transformOrigin:
-                        placement === "bottom" ? "center top" : "center bottom",
-                    }}
-                  >
-                    <Paper>
-                      <ClickAwayListener onClickAway={handleClose}>
-                        <MenuList
-                          autoFocusItem={open}
-                          id="menu-list-grow"
-                          onKeyDown={handleListKeyDown}
-                        >
-                          <MenuItem onClick={handleClose}>Profile</MenuItem>
-                          <MenuItem onClick={handleClose}>My account</MenuItem>
-                          <MenuItem onClick={handleClose}>Logout</MenuItem>
-                        </MenuList>
-                      </ClickAwayListener>
-                    </Paper>
-                  </Grow>
-                )}
-              </Popper> */}
+            
             </div>
 
             <Divider />

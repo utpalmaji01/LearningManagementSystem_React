@@ -229,7 +229,7 @@ class Student extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="student-outer-container">
         <StylesProvider>
           <Dialog
             open={this.state.openDialog}
