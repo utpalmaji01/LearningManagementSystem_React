@@ -1,0 +1,69 @@
+.box-content-course {
+  width: 431px;
+  height: 285px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  form {
+    width: 67%;
+    .text-fields-student {
+      margin: 17px 0px;
+      width: 100%;
+    }
+    .student-buttton-container {
+      display: flex;
+      justify-content: space-between;
+      .student-form-cancel-button {
+        width: 122px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #008cff;
+        border-radius: 3px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;
+      }
+      .student-form-add-button {
+        width: 122px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #008cff;
+        color: white;
+        border-radius: 3px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.single-card-course {
+  width: 250px;
+  height: 113px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #dee5ee;
+  border-radius: 11px;
+  .course-card-title-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px;
+    height: 64%;
+    Button{
+        padding: 0 !important;
+        height: 29px !important;
+    }
+    .course-card-title {
+      font-size: 16px;
+      
+    }
+  }
+
+  .course-card-code {
+    padding: 8px;
+  }
+}
