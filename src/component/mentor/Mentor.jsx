@@ -1,5 +1,6 @@
 import React from 'react';
 import './mentor.scss';
+import { Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -61,7 +62,8 @@ const Mentor = (props) => {
                         <p id="mentorMail" >Mentor Mail</p>
                     </div>
                 </div>
-                <div id="borderDiv" />
+                {/* <div id="borderDiv" /> */}
+                <Divider className="divide" />
                 <div id="content" >
                     <p id="cName" >Course Name</p>
                     <p id="nStud" >No. of Students</p>

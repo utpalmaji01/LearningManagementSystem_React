@@ -2,6 +2,7 @@
 .mentorContainer{
     width: 90%;
     margin: 20px auto;
+    font-family: lato;
     #firstPart{
         display: flex;
         justify-content: space-between;
@@ -30,6 +31,10 @@
         font-size: 11px;
         margin: 2px 15px;
         color: #ADADAD;
+    }
+    .divide{
+        width: 90%;
+        margin: 0 auto;
     }
     #borderDiv{
         width: 87%;
@@ -70,7 +75,6 @@
         margin: 5px;
     }
     #firstPart , #cardContain {
-        width: 80%;
     margin: 0 auto;
     }
 }
