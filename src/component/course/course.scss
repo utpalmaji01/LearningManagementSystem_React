@@ -16,10 +16,15 @@
     .text-fields-student {
       margin: 1px 0px;
       width: 100%;
+      .MuiFormControl-root{
+        margin: 8px auto !important;
+        width: 100% !important;
+      }
     }
     .student-buttton-container {
       display: flex;
       justify-content: space-between;
+      margin: 14px 0px;
       .student-form-cancel-button {
         width: 122px;
         height: 40px;
