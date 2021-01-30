@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { PersonOutlineOutlined as PersonOutlineOutlinedIcon } from "@material-ui/icons";
+import CourseIcon from "../../assets/image/course-icon.svg"
+import StudentIcon from "../../assets/image/student.svg"
 import clsx from "clsx";
 import history from "../../History.js";
 import "./sideNavBar.scss";
@@ -67,7 +69,7 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Student",
               })}
             >
-              <PersonOutlineOutlinedIcon fontSize="small" />
+              <img src={StudentIcon} className="icon-width-navbar"/>
             </ListItemIcon>
             <ListItemText primary="Student" className="list-item-text" />
           </ListItem>
@@ -83,7 +85,7 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Course",
               })}
             >
-              <PersonOutlineOutlinedIcon fontSize="small" />
+              <CourseIcon />
             </ListItemIcon>
             <ListItemText primary="Course" className="list-item-text" />
           </ListItem>

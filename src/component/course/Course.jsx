@@ -49,7 +49,7 @@ class Course extends React.Component {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <div className="box-top-header">Add Student</div>
+          <div className="box-top-header">Add Course</div>
           <div className="box-content-course">
             {" "}
             <form noValidate autoComplete="off">
