@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import AppBar from "../appBar/Appbar.jsx";
 import SidenavBar from "../sideNavBar/SidenavBar.jsx";
@@ -9,6 +9,9 @@ import Course from "../course/Course.jsx";
 import "./dashboard.scss";
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState("DashBoard");
+  
+  useEffect(() => {
+  },[]);
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
