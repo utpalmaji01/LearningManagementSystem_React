@@ -21,7 +21,6 @@ class AppBar extends Component {
   }
 
   showProfile = () => {
-    console.log("hello");
     this.setState({ isProfileClicked: !this.state.isProfileClicked });
   };
 
