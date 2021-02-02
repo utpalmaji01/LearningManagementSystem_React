@@ -78,3 +78,11 @@
     margin: 0 auto;
     }
 }
+@media screen and (max-width: 400px) {
+    .mentorContainer{
+    .MuiPaper-root{
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+}
