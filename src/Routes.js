@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./component/logIn/LogIn.jsx";
 import Dashboard from "./component/dashboard/dashboard.jsx";
+import UserProfile from './component/userProfile/userProfile';
 import PrivateRoute from "./component/PrivateRoute.jsx";
 import history from "./History.js";
 
@@ -24,6 +25,7 @@ export default class Routes extends Component {
             }
             component={() => <Dashboard />}
           />
+          <Route exact path="/userprofile" component={UserProfile}  />
         </Switch>
       </Router>
     );
