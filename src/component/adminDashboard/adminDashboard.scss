@@ -1,0 +1,18 @@
+.dashboard-container-admin {
+  display: flex;
+  flex-direction: column;
+  .dashboard-header-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 1;
+    .app-picture {
+      border-right: none !important;
+    }
+  }
+  .dashboard-body-admin {
+    padding: 10% 1% 0 9%;
+  }
+}
