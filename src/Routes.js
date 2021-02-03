@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./component/logIn/LogIn.jsx";
 import Dashboard from "./component/dashboard/dashboard.jsx";
+import UserDashboard from "./component/adminDashboard/AdminDashboard.jsx"
 import PrivateRoute from "./component/PrivateRoute.jsx";
 import history from "./History.js";
 
@@ -24,8 +25,10 @@ export default class Routes extends Component {
             }
             component={() => <Dashboard />}
           />
+          <Route path="/userdashboard" component={() =><UserDashboard />} />
         </Switch>
       </Router>
+      
       
     );
   }

@@ -5,23 +5,22 @@ import SidenavBar from "../sideNavBar/SidenavBar.jsx";
 import Loader from "../lazyLoading/Loading.jsx";
 import Mentor from "../mentor/Mentor.jsx";
 import Student from "../student/Student.jsx";
+import adminServices from '../../services/admin_service.js';
 import Course from "../course/Course.jsx";
-import axiosServices from "../../services/axios_service.js";
 import "./dashboard.scss";
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState("DashBoard");
   const [allCource, setAllCource] = useState(null);
 
   useEffect(() => {
-    axiosServices
-      .getServices("http://localhost:3000/cources")
-      .then((responce) => {
-        console.log(responce);
-        setAllCource(responce.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    adminServices.fetchAllCourse()
+    .then((responce) => {
+      console.log(responce);
+      setAllCource(responce.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }, []);
 
   const MainDashboard = lazy(() => {

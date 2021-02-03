@@ -88,7 +88,7 @@ class Course extends React.Component {
           <div className="header-student-text">Course Details</div>
           <div className="student-upload-button-container">
             <div className="add-student-button" onClick={this.handleClickOpen}>
-              Add Student
+              Add Course
             </div>
           </div>
         </div>

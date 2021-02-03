@@ -17,23 +17,23 @@
 import axios from "axios";
 
 class axiosServices {
-  getServices = (url, isTokenRequired=false, header=null) => {
+  getServices = (url, isTokenRequired = false, header = null) => {
     console.log("reach get service");
     return axios
       .get(url, isTokenRequired && header);
   };
 
-  postServices = (url, data, isTokenRequired=false, header=null) => {
+  postServices = (url, data, isTokenRequired = false, header = null) => {
     console.log("reach post service");
     return axios
       .post(url, data, isTokenRequired && header);
   };
-  putServices = (url, data, isTokenRequired=false, header=null) => {
+  putServices = (url, data, isTokenRequired = false, header = null) => {
     console.log("reach put service");
     return axios
       .put(url, data, isTokenRequired && header);
   };
-  deleteServices = (url, isTokenRequired=false, header=null) => {
+  deleteServices = (url, isTokenRequired = false, header = null) => {
     console.log("reach delete service");
     return axios
       .delete(url, isTokenRequired && header);

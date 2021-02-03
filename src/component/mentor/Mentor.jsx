@@ -1,14 +1,13 @@
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 import './mentor.scss';
-import { Divider } from '@material-ui/core';
+import { Divider , IconButton , Card , Button , Menu,
+    MenuItem, } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import { MoreVert as MoreVertIcon } from "@material-ui/icons";
 import MentorDialog from '../MentorFormDialog/MentorDialog';
+import axiosServices from "../../services/axios_service.js";
+import adminServices from '../../services/admin_service.js';
 
 const useStyles = makeStyles({
     root: {
@@ -29,7 +28,13 @@ const useStyles = makeStyles({
 
 
 const Mentor = (props) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [ anchorEl , setAnchorEl ] = useState(null);
+    const [ allMentors , setAllMentors ] = useState([]);
+
+    useEffect(() => {
+        getAllMentors();
+      }, []);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -37,6 +42,25 @@ const Mentor = (props) => {
     const handleClose = () => {
         setOpen(false);
       };
+
+    const getAllMentors = () => {
+        axiosServices
+          .getServices("http://localhost:3000/mentors")
+          .then((responce) => {
+            console.log(responce);
+            setAllMentors(responce.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
+
+    const handleClickOpenMenu = (event) => {
+        setAnchorEl(event.currentTarget);
+    }
+    const handleCloseMenu = () => {
+        setAnchorEl(null);
+    }
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
@@ -51,16 +75,51 @@ const Mentor = (props) => {
                  </Button>
             </div>
             <div id="cardContain">
-            <Card className={classes.root} variant="outlined">
+                {allMentors.map((eachMentor)=> (
+            <Card key={eachMentor.mID} className="eachMentorCard" variant="outlined">
                 <div id="displayArea" >
                     <div id="imageArea" >
                         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                     </div>
                     <div id="nameArea" >
-                        <p id="mentorName" >Mentor Name</p>
-                        <p id="mentorId">Mentor Id</p>
+                        <p id="mentorName" >{eachMentor.mName}</p>
+                        <p id="mentorId">{eachMentor.mID}</p>
                         <p id="mentorMail" >Mentor Mail</p>
                     </div>
+                    <div className="openMenu">
+                    <IconButton
+                        aria-controls="cource-menu"
+                        aria-haspopup="true"
+                        onClick={handleClickOpenMenu}
+                        className="cource-action-button" className="iconButtonMenu"
+                      >
+                        <MoreVertIcon fontSize="small" />
+                      </IconButton>
+                      <Menu
+                        id="cource-menu"
+                        elevation={0}
+                        getContentAnchorEl={null}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "center",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleCloseMenu}
+                      >
+                        <MenuItem dense onClick={handleCloseMenu}>
+                          Edit
+                        </MenuItem>
+                        <MenuItem dense onClick={handleCloseMenu}>
+                          Delete
+                        </MenuItem>
+                      </Menu>
+                      </div>
                 </div>
                 {/* <div id="borderDiv" /> */}
                 <Divider className="divide" />
@@ -75,6 +134,7 @@ const Mentor = (props) => {
                     </div>
                 </div>
             </Card>
+            ))}
             </div>
         </div>
         <MentorDialog open={open} handleClickOpen={handleClickOpen} handleClose={handleClose} />
