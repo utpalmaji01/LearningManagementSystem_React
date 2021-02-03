@@ -21,20 +21,6 @@ class MainDashboard extends Component {
     };
   }
 
-  // PerticularCourceDetails = lazy(() => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(
-  //       () =>
-  //         resolve(
-  //           import("../perticularCourceDetails/PerticularCourceDetails.jsx")
-  //         ),
-  //       2000
-  //     );
-  //   });
-  // });
-  // componentDidMount() {
-  //   console.log(this.props.allCource);
-  // }
 
   handleClick = (event) => {
     this.setState({
@@ -72,12 +58,6 @@ class MainDashboard extends Component {
                   perticularCource={this.state.perticularCource}
                   showDashboard={this.showDashboard}
                 />
-                // <Suspense fallback={<Loader />}>
-                //   <PerticularCourceDetails
-                //     perticularCource={this.state.perticularCource}
-                //     showDashboard={this.showDashboard}
-                //   />
-                // </Suspense>
               )}
           </>
         ) : (
