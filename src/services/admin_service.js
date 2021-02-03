@@ -19,14 +19,22 @@ import axiosServices from "./axios_service.js";
 class adminServices {
   fetchAllCourse = () => {
     console.log("reach fetch all course");
-    return axiosServices.getServices(process.env.REACT_APP_FETCH_ALL_COURSES_PATH);
+    return axiosServices.getServices(
+      process.env.REACT_APP_FETCH_ALL_COURSES_PATH
+    );
   };
 
-  fetchAllMentor = () => {
-    return axiosServices.getServices(process.env.REACT_APP_FETCH_ALL_MENTORS_PATH);
+  fetchAllMentors = () => {
+    console.log(process.env.REACT_APP_FETCH_ALL_MENTORS_PATH);
+    return axiosServices.getServices(
+      process.env.REACT_APP_FETCH_ALL_MENTORS_PATH
+    );
   };
+
   fetchAllStudents = () => {
-    return axiosServices.getServices(process.env.REACT_APP_FETCH_ALL_STUDENTS_PATH);
+    return axiosServices.getServices(
+      process.env.REACT_APP_FETCH_ALL_STUDENTS_PATH
+    );
   };
 }
 

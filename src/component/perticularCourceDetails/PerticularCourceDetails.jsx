@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { IconButton, Typography } from "@material-ui/core";
 import { Delete as DeleteIcon } from "@material-ui/icons";
-import axiosServices from "../../services/axios_service.js";
-import adminServices from '../../services/admin_service.js';
+import adminServices from "../../services/admin_service.js";
 import Loader from "../lazyLoading/Loading.jsx";
 import personImg from "../../assets/image/personImg.png";
+import axiosServices from "../../services/axios_service.js"
 import "./perticularCourceDetails.scss";
 
 const PerticularCourceDetails = (props) => {
@@ -13,9 +13,10 @@ const PerticularCourceDetails = (props) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    axiosServices
-      .getServices("http://localhost:3000/students")
+    adminServices
+      .fetchAllStudents()
       .then((responce) => {
+        console.log(responce);
         setCourceStudents(
           responce.data.filter((eachStudent) =>
             eachStudent.assignCourcesId.includes(
@@ -23,7 +24,11 @@ const PerticularCourceDetails = (props) => {
             )
           )
         );
-        axiosServices
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      axiosServices
           .getServices("http://localhost:3000/mentors")
         .then((responce) => {
           setCourceMentors(
@@ -36,22 +41,29 @@ const PerticularCourceDetails = (props) => {
         .catch((error) => {
           console.log(error);
         });
-        // adminServices.fetchAllMentor().then((responce) => {
-        //   setCourceMentors(
-        //     responce.data.filter((eachMentor) =>
-        //       eachMentor.ableCource.includes(props.perticularCource.courceID)
-        //     )
-        //   );
-        //   setLoaded(true);
-        // })
-        //   .catch((error) => {
-        //     console.log(error);
-        //   });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // adminServices
+    //   .fetchAllMentors()
+    //   .then((responce) => {
+    //     console.log(responce);
+    //     setCourceMentors(
+    //       responce.data.filter((eachMentor) =>
+    //         eachMentor.ableCource.includes(props.perticularCource.courceID)
+    //       )
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }, [props.perticularCource]);
+
+  if (
+    courceMentors !== undefined &&
+    courceMentors !== null &&
+    courceStudents !== undefined &&
+    courceStudents !== null
+  ) {
+    setLoaded(true);
+  }
 
   if (loaded) {
     return (
@@ -89,7 +101,11 @@ const PerticularCourceDetails = (props) => {
                     </IconButton>
                   </div>
                   <div className="each-mentor-picture">
-                    <img src={personImg} alt="mentor" className="each-mentor-img" />
+                    <img
+                      src={personImg}
+                      alt="mentor"
+                      className="each-mentor-img"
+                    />
                   </div>
                   <div className="each-mentor-details">
                     <Typography

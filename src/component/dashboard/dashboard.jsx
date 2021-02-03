@@ -11,6 +11,7 @@ import "./dashboard.scss";
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState("DashBoard");
   const [allCource, setAllCource] = useState(null);
+  const [sideNavOpen,setSideNavOpen] = useState(false);
 
   useEffect(() => {
     adminServices.fetchAllCourse()
@@ -27,20 +28,22 @@ const Dashboard = () => {
     return new Promise((resolve) => {
       setTimeout(
         () => resolve(import("../mainDashboard/MainDashboard.jsx")),
-        1000
+        2000
       );
     });
-  });
+  }); 
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <AppBar />
+        <AppBar sideNavOpen={sideNavOpen} setSideNavOpen={setSideNavOpen} />
       </div>
       <div className="dashboard-body">
         <div className="dashboard-side-navbar">
           <SidenavBar
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
+            sideNavOpen={sideNavOpen}
+            setSideNavOpen={setSideNavOpen}
           />
         </div>
         <div className="dashboard-details">

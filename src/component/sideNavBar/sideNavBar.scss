@@ -25,6 +25,14 @@
       .list-item-icon.list-item-icon-active {
         color: $color-sidenav-active-border;
       }
+      .list-item-text{
+        @media screen and (max-width: $break-small) {
+          display: none;
+          &:hover {
+            display: block;
+          }
+        }
+      }
     }
     .sideNav-list-item.sideNav-list-item-active {
       color: $color-sidenav-active-border;
