@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import AppBar from "../appBar/Appbar.jsx";
+import UserProfile from "../userProfile/userProfile.jsx";
 import AdminDetails from "../adminDashboardDetails/AdminDashboardDetails.jsx";
 import "./adminDashboard.scss";
 const Dashboard = () => {
@@ -11,14 +12,19 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-body-admin">
         <div className="dashboard-details-admin">
-          {/* <Switch>
+          <Switch>
             <Route
-              path="/admindashboard/details"
+              path="/userdashboard/details"
               component={() => <AdminDetails />}
             />
-          </Switch> */}
-          <AdminDetails />
+             <Route
+              path="/userdashboard/profile"
+              component={() => <UserProfile /> }
+            />
+          </Switch>
+          
         </div>
+        
       </div>
     </div>
   );
