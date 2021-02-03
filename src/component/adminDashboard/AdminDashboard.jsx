@@ -11,8 +11,9 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-body-admin">
         <div className="dashboard-details-admin">
-          <Switch>
+          {/* <Switch>
             <Route
+<<<<<<< HEAD
               path="/userdashboard/details"
               component={() => <AdminDetails />}
             />
@@ -22,6 +23,13 @@ const Dashboard = () => {
             />
           </Switch>
           {/* <AdminDetails /> */}
+=======
+              path="/admindashboard/details"
+              component={() => <AdminDetails />}
+            />
+          </Switch> */}
+          <AdminDetails />
+>>>>>>> dev
         </div>
         
       </div>

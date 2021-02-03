@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import history from "../../History.js";
 import loginImg from "../../assets/image/login.png";
 import lms from "../../assets/image/lms.png";
 import {
@@ -55,7 +54,8 @@ class LogIn extends Component {
       }
     }
     if (e.target.name === "password") {
-      if (e.target.value.match(this.passwordPattern)) {
+      // if (e.target.value.match(this.passwordPattern)) {
+      if (e.target.value.length > 4) {
         this.setState({
           password: e.target.value,
           passwordFlag: false,
@@ -70,7 +70,8 @@ class LogIn extends Component {
         this.setState({
           passwordFlag: true,
           passwordHelperText:
-            "Combination of upper and lower case, number & spc. char.",
+            // "Combination of upper and lower case, number & spc. char.",
+            "Minimum 5 char.",
         });
       }
     }

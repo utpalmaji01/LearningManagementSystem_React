@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import AppBar from "../appBar/Appbar.jsx";
 import SidenavBar from "../sideNavBar/SidenavBar.jsx";
-import MainDashboard from "../mainDashboard/MainDashboard.jsx";
+import Loader from "../lazyLoading/Loading.jsx";
 import Mentor from "../mentor/Mentor.jsx";
 import Student from "../student/Student.jsx";
 import Course from "../course/Course.jsx";
+import axiosServices from "../../services/axios_service.js";
 import "./dashboard.scss";
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState("DashBoard");
+  const [allCource, setAllCource] = useState(null);
+
+  useEffect(() => {
+    axiosServices
+      .getServices("http://localhost:3000/cources")
+      .then((responce) => {
+        console.log(responce);
+        setAllCource(responce.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const MainDashboard = lazy(() => {
+    return new Promise((resolve) => {
+      setTimeout(
+        () => resolve(import("../mainDashboard/MainDashboard.jsx")),
+        1000
+      );
+    });
+  });
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
@@ -23,7 +46,14 @@ const Dashboard = () => {
         </div>
         <div className="dashboard-details">
           <Switch>
-            <Route path="/dashboard/main" component={() => <MainDashboard />} />
+            <Route
+              path="/dashboard/main"
+              component={() => (
+                <Suspense fallback={<Loader />}>
+                  <MainDashboard allCource={allCource} />
+                </Suspense>
+              )}
+            />
             <Route path="/dashboard/Mentor" component={() => <Mentor />} />
             <Route path="/dashboard/Student" component={() => <Student />} />
             <Route path="/dashboard/Course" component={() => <Course />} />

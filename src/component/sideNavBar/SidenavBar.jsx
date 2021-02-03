@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import { PersonOutlineOutlined as PersonOutlineOutlinedIcon } from "@material-ui/icons";
-import CourseIcon from "../../assets/image/course-icon.svg"
-import StudentIcon from "../../assets/image/student.svg"
+import { Laptop as LaptopIcon, School as SchoolIcon } from "@material-ui/icons";
+import mentor_icon from "../../assets/icon/Mentor.png";
+import cource_icon from "../../assets/icon/Course.png";
 import clsx from "clsx";
 import history from "../../History.js";
 import "./sideNavBar.scss";
@@ -37,7 +37,7 @@ class SidenavBar extends Component {
                   this.props.selectedMenu === "DashBoard",
               })}
             >
-              <PersonOutlineOutlinedIcon fontSize="small" />
+              <LaptopIcon className="list-icon" />
             </ListItemIcon>
             <ListItemText primary="DashBoard" className="list-item-text" />
           </ListItem>
@@ -53,7 +53,7 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Mentor",
               })}
             >
-              <PersonOutlineOutlinedIcon fontSize="small" />
+              <img src={mentor_icon} alt="mentor-icon" className="list-icon" />
             </ListItemIcon>
             <ListItemText primary="Mentor" className="list-item-text" />
           </ListItem>
@@ -69,7 +69,7 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Student",
               })}
             >
-              <img src={StudentIcon} className="icon-width-navbar"/>
+              <SchoolIcon className="list-icon" />
             </ListItemIcon>
             <ListItemText primary="Student" className="list-item-text" />
           </ListItem>

@@ -9,51 +9,52 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
- const MentorDialog = (props) => {
-    const [state, setState] = React.useState({
-        age: '',
-        name: 'hai',
-      });
-    
-      const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-          ...state,
-          [name]: event.target.value,
-        });
-      };
+const MentorDialog = (props) => {
+  const [state, setState] = React.useState({
+    age: '',
+    name: 'hai',
+  });
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+  };
 
   return (
-    <div id="dialogContainer" >
-      <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title">
-        <div className="mentor-content-inner-dialog-box">
+    <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title" className="addMentorDialog" >
+      
+      <div className="addMentor" >Add Mentor</div>
+        <div className="fullDialog" >
         <DialogContent>
         <TextField
           label="Mentor ID"
-          id="outlined-size-small"
           variant="outlined"
-          size="small"
+          margin="dense"
+          fullWidth
         />
         <TextField
           label="Name"
-          id="outlined-size-small"
           variant="outlined"
-          size="small"
+          margin="dense"
+          fullWidth
         />
         <TextField
           label="E-mail"
-          id="outlined-size-small"
           variant="outlined"
-          size="small"
+          margin="dense"
+          fullWidth
         />
         <TextField
           label="Phone"
-          id="outlined-size-small"
           variant="outlined"
-          size="small"
+          margin="dense"
+          fullWidth
         />
         <FormControl variant="outlined" >
-        <InputLabel htmlFor="outlined-age-native-simple">Course</InputLabel>
+        <InputLabel htmlFor="outlined-age-native-simple"  >Course</InputLabel>
         <Select
           native
           size="small"
@@ -73,16 +74,16 @@ import FormControl from '@material-ui/core/FormControl';
       </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.handleClose} color="primary">
+          <Button onClick={props.handleClose} id="cancel" >
             Cancel
           </Button>
-          <Button onClick={props.handleClose} color="primary">
+          <Button onClick={props.handleClose} id="addBtn" >
             ADD
           </Button>
         </DialogActions>
         </div>
-      </Dialog>
-    </div>
+    </Dialog>
+
   );
 }
 export default MentorDialog;
