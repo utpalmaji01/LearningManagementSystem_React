@@ -85,7 +85,7 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Course",
               })}
             >
-              <img src={CourseIcon } className="icon-width-navbar"/>
+              <img src={cource_icon} className="icon-width-navbar"/>
             </ListItemIcon>
             <ListItemText primary="Course" className="list-item-text" />
           </ListItem>
