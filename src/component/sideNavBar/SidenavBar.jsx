@@ -19,7 +19,7 @@ class SidenavBar extends Component {
       history.push("/dashboard/main");
     }
   };
-  render() {
+  render() { 
     return (
       <div className="sideNavBar-container">
         <List component="nav" className="sideNavBar-list">
@@ -31,7 +31,7 @@ class SidenavBar extends Component {
                 this.props.selectedMenu === "DashBoard",
             })}
           >
-            <ListItemIcon
+            <ListItemIcon 
               className={clsx("list-item-icon", {
                 "list-item-icon-active":
                   this.props.selectedMenu === "DashBoard",
@@ -39,7 +39,12 @@ class SidenavBar extends Component {
             >
               <LaptopIcon className="list-icon" />
             </ListItemIcon>
-            <ListItemText primary="DashBoard" className="list-item-text" />
+            <ListItemText
+              primary="DashBoard"
+              className={clsx("list-item-text", {
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
+              })}
+            />
           </ListItem>
           <ListItem
             button
@@ -55,7 +60,12 @@ class SidenavBar extends Component {
             >
               <img src={mentor_icon} alt="mentor-icon" className="list-icon" />
             </ListItemIcon>
-            <ListItemText primary="Mentor" className="list-item-text" />
+            <ListItemText
+              primary="Mentor"
+              className={clsx("list-item-text", {
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
+              })}
+            />
           </ListItem>
           <ListItem
             button
@@ -71,7 +81,12 @@ class SidenavBar extends Component {
             >
               <SchoolIcon className="list-icon" />
             </ListItemIcon>
-            <ListItemText primary="Student" className="list-item-text" />
+            <ListItemText
+              primary="Student"
+              className={clsx("list-item-text", {
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
+              })}
+            />
           </ListItem>
           <ListItem
             button
@@ -85,9 +100,14 @@ class SidenavBar extends Component {
                 "list-item-icon-active": this.props.selectedMenu === "Course",
               })}
             >
-              <img src={cource_icon} className="icon-width-navbar"/>
+              <img src={cource_icon} className="icon-width-navbar" />
             </ListItemIcon>
-            <ListItemText primary="Course" className="list-item-text" />
+            <ListItemText
+              primary="Course"
+              className={clsx("list-item-text", {
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
+              })}
+            />
           </ListItem>
         </List>
       </div>
