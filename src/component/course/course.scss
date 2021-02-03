@@ -52,7 +52,7 @@
   }
 }
 .single-card-course {
-  width: 250px;
+  width: 30%;
   height: 113px;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #dee5ee;
@@ -73,5 +73,16 @@
 
   .course-card-code {
     padding: 8px;
+  }
+}
+@media screen (max-width:600px){
+  .single-card-course{
+    width: 100%;
+  }
+  .course-card-title{
+    padding: 3%;
+  }
+  .header-student{
+    flex-direction: column !important;
   }
 }
