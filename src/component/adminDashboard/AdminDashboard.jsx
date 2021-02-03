@@ -11,13 +11,13 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-body-admin">
         <div className="dashboard-details-admin">
-          {/* <Switch>
+          <Switch>
             <Route
               path="/dashboard/details"
               component={() => <AdminDetails />}
             />
-          </Switch> */}
-          <AdminDetails />
+          </Switch>
+          {/* <AdminDetails /> */}
         </div>
       </div>
     </div>
