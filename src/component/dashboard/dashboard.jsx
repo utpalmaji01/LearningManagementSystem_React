@@ -27,7 +27,7 @@ const Dashboard = () => {
     return new Promise((resolve) => {
       setTimeout(
         () => resolve(import("../mainDashboard/MainDashboard.jsx")),
-        3000
+        1000
       );
     });
   });
