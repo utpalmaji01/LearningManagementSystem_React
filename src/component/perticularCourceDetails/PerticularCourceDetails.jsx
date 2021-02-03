@@ -4,13 +4,11 @@ import { Delete as DeleteIcon } from "@material-ui/icons";
 import adminServices from "../../services/admin_service.js";
 import Loader from "../lazyLoading/Loading.jsx";
 import personImg from "../../assets/image/personImg.png";
-import axiosServices from "../../services/axios_service.js"
 import "./perticularCourceDetails.scss";
 
 const PerticularCourceDetails = (props) => {
   const [courceMentors, setCourceMentors] = useState(null);
   const [courceStudents, setCourceStudents] = useState(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     adminServices
@@ -24,36 +22,24 @@ const PerticularCourceDetails = (props) => {
             )
           )
         );
+
+        adminServices
+          .fetchAllMentors()
+          .then((responce) => {
+            console.log(responce);
+            setCourceMentors(
+              responce.data.filter((eachMentor) =>
+                eachMentor.ableCource.includes(props.perticularCource.courceID)
+              )
+            );
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
       });
-      axiosServices
-          .getServices("http://localhost:3000/mentors")
-        .then((responce) => {
-          setCourceMentors(
-            responce.data.filter((eachMentor) =>
-              eachMentor.ableCource.includes(props.perticularCource.courceID)
-            )
-          );
-          setLoaded(true);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    // adminServices
-    //   .fetchAllMentors()
-    //   .then((responce) => {
-    //     console.log(responce);
-    //     setCourceMentors(
-    //       responce.data.filter((eachMentor) =>
-    //         eachMentor.ableCource.includes(props.perticularCource.courceID)
-    //       )
-    //     );
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   }, [props.perticularCource]);
 
   if (
@@ -62,10 +48,6 @@ const PerticularCourceDetails = (props) => {
     courceStudents !== undefined &&
     courceStudents !== null
   ) {
-    setLoaded(true);
-  }
-
-  if (loaded) {
     return (
       <div className="perticular-cource">
         <div className="perticular-cource-header">

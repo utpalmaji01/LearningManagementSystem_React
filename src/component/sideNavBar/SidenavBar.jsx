@@ -19,7 +19,7 @@ class SidenavBar extends Component {
       history.push("/dashboard/main");
     }
   };
-  render() {
+  render() { 
     return (
       <div className="sideNavBar-container">
         <List component="nav" className="sideNavBar-list">
@@ -31,7 +31,7 @@ class SidenavBar extends Component {
                 this.props.selectedMenu === "DashBoard",
             })}
           >
-            <ListItemIcon
+            <ListItemIcon 
               className={clsx("list-item-icon", {
                 "list-item-icon-active":
                   this.props.selectedMenu === "DashBoard",
@@ -42,7 +42,7 @@ class SidenavBar extends Component {
             <ListItemText
               primary="DashBoard"
               className={clsx("list-item-text", {
-                "sideNav-list-item-text-inactive": this.props.sideNavOpen,
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
               })}
             />
           </ListItem>
@@ -63,7 +63,7 @@ class SidenavBar extends Component {
             <ListItemText
               primary="Mentor"
               className={clsx("list-item-text", {
-                "sideNav-list-item-text-inactive": this.props.sideNavOpen,
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
               })}
             />
           </ListItem>
@@ -84,7 +84,7 @@ class SidenavBar extends Component {
             <ListItemText
               primary="Student"
               className={clsx("list-item-text", {
-                "sideNav-list-item-text-inactive": this.props.sideNavOpen,
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
               })}
             />
           </ListItem>
@@ -105,7 +105,7 @@ class SidenavBar extends Component {
             <ListItemText
               primary="Course"
               className={clsx("list-item-text", {
-                "sideNav-list-item-text-inactive": this.props.sideNavOpen,
+                "sideNav-list-item-text-active": this.props.sideNavOpen,
               })}
             />
           </ListItem>
