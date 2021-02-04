@@ -59,7 +59,7 @@ const Dashboard = () => {
               path="/dashboard/Student"
               component={() => (
                 <Suspense fallback={<Loader />}>
-                  <Student allCource={allCource} />
+                  <Student />
                 </Suspense>
               )}
             />
