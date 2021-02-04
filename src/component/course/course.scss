@@ -16,7 +16,7 @@
     .text-fields-student {
       margin: 1px 0px;
       width: 100%;
-      .MuiFormControl-root{
+      .MuiFormControl-root {
         margin: 8px auto !important;
         width: 100% !important;
       }
@@ -71,11 +71,13 @@
       font-size: 16px;
     }
   }
+ 
 
   .course-card-code {
     padding: 8px;
   }
 }
+<<<<<<< HEAD
 @media screen and (max-width: 600px){
   .header-student{
     flex-direction: column;
@@ -86,4 +88,20 @@
   .single-card-course {
     width: 100%;
   }
+=======
+
+@media screen and (max-width: 600px) {
+  .single-card-course {
+    width: 99% !important;
+  }
+  .course-card-title {
+    padding: 3%;
+  }
+  .header-student {
+    flex-direction: column !important;
+    .header-student-text{
+      margin: 12px 0px;
+    }
+  }
+>>>>>>> swagat
 }

@@ -55,7 +55,14 @@ const Dashboard = () => {
               )}
             />
             <Route path="/dashboard/Mentor" component={() => <Mentor />} />
-            <Route path="/dashboard/Student" component={() => <Student />} />
+            <Route
+              path="/dashboard/Student"
+              component={() => (
+                <Suspense fallback={<Loader />}>
+                  <Student allCource={allCource} />
+                </Suspense>
+              )}
+            />
             <Route path="/dashboard/Course" component={() => <Course />} />
           </Switch>
         </div>

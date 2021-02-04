@@ -12,7 +12,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -201,6 +201,7 @@ class Student extends React.Component {
       openUploadDialog: false,
     };
   }
+  
   handleChangemenu1 = (event) => {
     this.setState({ menu1: event.target.value });
   };
@@ -229,6 +230,7 @@ class Student extends React.Component {
   };
   render() {
     return (
+      
       <div className="student-outer-container">
         <StylesProvider>
           <Dialog
@@ -343,7 +345,10 @@ class Student extends React.Component {
             <div className="outer-box-upload">
               <div className="upload-header-container">
                 <div className="upload-box-header">Upload Engineers Data</div>
-                <CloseIcon onClick={this.handleCloseUpload} style={{cursor: "pointer"}} />
+                <CloseIcon
+                  onClick={this.handleCloseUpload}
+                  style={{ cursor: "pointer" }}
+                />
               </div>
               <div className="inner-upload-container">
                 <div>
@@ -403,31 +408,32 @@ class Student extends React.Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {rows.map((row) => (
-                    <StyledTableRow key={row.name}>
-                      <StyledTableCell component="th" scope="row">
-                        {row.Student_ID}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Name}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Email_ID}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Mobile_No}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Course}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Mentor}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">
-                        {row.Current_score}
-                      </StyledTableCell>
-                    </StyledTableRow>
-                  ))}
+                  {this.props.allCource &&
+                    this.props.allCource.map((row) => (
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell component="th" scope="row">
+                          {row.sId}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.Name}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.email}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.mobileNo}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.Course}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.assignMentorsId}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.assignCourcesId}
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    ))}
                 </TableBody>
               </Table>
             </TableContainer>
