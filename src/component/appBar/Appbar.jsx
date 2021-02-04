@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import vsCodeLogo from "../../assets/image/vsCodeLogo.png";
+import { Menu as MenuIcon } from "@material-ui/icons";
 import history from "../../History.js";
 import "./appbar.scss";
 
@@ -29,11 +30,22 @@ class AppBar extends Component {
     this.setState({ isProfileClicked: !this.state.isProfileClicked });
     history.push("/logIn");
   };
+
+  toggleNavBar = () => {
+    console.log("toggleNavBar reached");
+    this.props.setSideNavOpen(!this.props.sideNavOpen);
+  };
   render() {
     return (
       <>
         <div className="appbar-container">
           <div className="app-picture">
+            <IconButton
+              className="navBar-toggle-button"
+              onClick={() => this.toggleNavBar()}
+            >
+              <MenuIcon fontSize="small" />
+            </IconButton>
             <img src={lms} alt="lms-logo" className="lms-logo" />
           </div>
           <div className="app-prifile-button">
