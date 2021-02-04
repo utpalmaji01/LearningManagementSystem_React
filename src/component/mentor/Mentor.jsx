@@ -61,6 +61,9 @@ const Mentor = (props) => {
     const handleCloseMenu = () => {
         setAnchorEl(null);
     }
+    const deleteMentor = (eachMentor) => {
+      console.log(eachMentor.mId);
+    }
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
@@ -115,7 +118,7 @@ const Mentor = (props) => {
                         <MenuItem dense onClick={handleCloseMenu}>
                           Edit
                         </MenuItem>
-                        <MenuItem dense onClick={handleCloseMenu}>
+                        <MenuItem dense onClick={deleteMentor(eachMentor)}>
                           Delete
                         </MenuItem>
                       </Menu>
