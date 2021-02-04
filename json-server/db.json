@@ -135,6 +135,8 @@
     {
       "mId": "MID2101",
       "mName": "El Maynell",
+      "email": "gparagreen0@yahoo.co.jp",
+      "mobileNo": "7099424117",
       "ableCource": ["CID3101"],
       "assignStudentsId": [
         "SID1101",
@@ -148,6 +150,8 @@
     {
       "mId": "MID2102",
       "mName": "Efren Rootes",
+      "email": "rdederick1@redcross.org",
+      "mobileNo": "1443824364",
       "ableCource": ["CID3102"],
       "assignStudentsId": [
         "SID1104",
@@ -161,6 +165,8 @@
     {
       "mId": "MID2103",
       "mName": "Aldous Karlqvist",
+      "email": "bjellings2@noaa.gov",
+      "mobileNo": "1836261139",
       "ableCource": ["CID3103"],
       "assignStudentsId": [
         "SID1107",
@@ -174,6 +180,8 @@
     {
       "mId": "MID2104",
       "mName": "Cher Gosselin",
+      "email": "vpigrome3@prweb.com",
+      "mobileNo": "7272438682",
       "ableCource": ["CID3104"],
       "assignStudentsId": [
         "SID1110",
@@ -187,6 +195,8 @@
     {
       "mId": "MID2105",
       "mName": "Gertrudis Matieu",
+      "email": "mpaty4@chronoengine.com",
+      "mobileNo": "6995988612",
       "ableCource": ["CID3105"],
       "assignStudentsId": [
         "SID1113",
@@ -200,6 +210,8 @@
     {
       "mId": "MID2106",
       "mName": "Lucinda Grayston",
+      "email": "hdibaudi5@usnews.com",
+      "mobileNo": "2396224642",
       "ableCource": ["CID3106"],
       "assignStudentsId": [
         "SID1116",
@@ -213,6 +225,8 @@
     {
       "mId": "MID2107",
       "mName": "Lesly Marcos",
+      "email": "kdigiorgio6@xrea.com",
+      "mobileNo": "2904188590",
       "ableCource": ["CID3107"],
       "assignStudentsId": [
         "SID1119",
@@ -226,6 +240,8 @@
     {
       "mId": "MID2108",
       "mName": "Thaddus Butten",
+      "email": "ndecreuze7@economist.com",
+      "mobileNo": "6857007435",
       "ableCource": ["CID3108"],
       "assignStudentsId": [
         "SID1122",
@@ -239,6 +255,8 @@
     {
       "mId": "MID2109",
       "mName": "Rabi Rycroft",
+      "email": "cvooght8@creativecommons.org",
+      "mobileNo": "2288029890",
       "ableCource": ["CID3109"],
       "assignStudentsId": [
         "SID1125",
@@ -252,6 +270,8 @@
     {
       "mId": "MID2110",
       "mName": "Lona Galler",
+      "email": "fwainscoat9@pen.io",
+      "mobileNo": "2835374588",
       "ableCource": ["CID3110"],
       "assignStudentsId": [
         "SID1128",
@@ -265,48 +285,64 @@
     {
       "mId": "MID2111",
       "mName": "Fionnula Fridd",
+      "email": "lleadleya@marketwatch.com",
+      "mobileNo": "5577821959",
       "ableCource": ["CID3101"],
       "assignStudentsId": ["SID1159"]
     },
     {
       "mId": "MID2112",
       "mName": "Davida Didsbury",
+      "email": "ecaughteb@networkadvertising.org",
+      "mobileNo": "3187479730",
       "ableCource": ["CID3102"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2113",
       "mName": "Zak Avrahamoff",
+      "email": "hbonaviad@phpbb.com",
+      "mobileNo": "8844546013",
       "ableCource": ["CID3103"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2114",
       "mName": "Carrissa Snasel",
+      "email": "hbolvere@sogou.com",
+      "mobileNo": "5041515341",
       "ableCource": ["CID3104"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2115",
       "mName": "Nels Ivchenko",
+      "email": "bstickleyf@spotify.com",
+      "mobileNo": "3939638035",
       "ableCource": ["CID3105"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2116",
       "mName": "Page Han",
+      "email": "jlarchierg@icq.com",
+      "mobileNo": "1276366199",
       "ableCource": ["CID3106"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2117",
       "mName": "Rania Shallcross",
+      "email": "tsampsonh@nytimes.com",
+      "mobileNo": "6479913723",
       "ableCource": ["CID3107"],
       "assignStudentsId": []
     },
     {
       "mId": "MID2118",
       "mName": "Sayre Clement",
+      "email": "pgosney0@ask.com",
+      "mobileNo": "6271544163",
       "ableCource": ["CID3108"],
       "assignStudentsId": []
     }

@@ -41,6 +41,7 @@ class MainDashboard extends Component {
   };
 
   showPerticularCource = (cource) => {
+    console.log("hello"); 
     this.setState({
       showPerticularCourceDetails: true,
       perticularCource: cource,

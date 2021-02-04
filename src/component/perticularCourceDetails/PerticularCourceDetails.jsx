@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IconButton, Typography } from "@material-ui/core";
 import { Delete as DeleteIcon } from "@material-ui/icons";
-import axiosServices from "../../services/axios_service.js";
+import adminServices from "../../services/admin_service.js";
 import Loader from "../lazyLoading/Loading.jsx";
 import personImg from "../../assets/image/personImg.png";
 import "./perticularCourceDetails.scss";
@@ -9,12 +9,12 @@ import "./perticularCourceDetails.scss";
 const PerticularCourceDetails = (props) => {
   const [courceMentors, setCourceMentors] = useState(null);
   const [courceStudents, setCourceStudents] = useState(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    axiosServices
-      .getServices("http://localhost:3000/students")
+    adminServices
+      .fetchAllStudents()
       .then((responce) => {
+        console.log(responce);
         setCourceStudents(
           responce.data.filter((eachStudent) =>
             eachStudent.assignCourcesId.includes(
@@ -22,15 +22,16 @@ const PerticularCourceDetails = (props) => {
             )
           )
         );
-        axiosServices
-          .getServices("http://localhost:3000/mentors")
+
+        adminServices
+          .fetchAllMentors()
           .then((responce) => {
+            console.log(responce);
             setCourceMentors(
               responce.data.filter((eachMentor) =>
                 eachMentor.ableCource.includes(props.perticularCource.courceID)
               )
             );
-            setLoaded(true);
           })
           .catch((error) => {
             console.log(error);
@@ -41,7 +42,12 @@ const PerticularCourceDetails = (props) => {
       });
   }, [props.perticularCource]);
 
-  if (loaded) {
+  if (
+    courceMentors !== undefined &&
+    courceMentors !== null &&
+    courceStudents !== undefined &&
+    courceStudents !== null
+  ) {
     return (
       <div className="perticular-cource">
         <div className="perticular-cource-header">
@@ -77,7 +83,11 @@ const PerticularCourceDetails = (props) => {
                     </IconButton>
                   </div>
                   <div className="each-mentor-picture">
-                    <img src={personImg} alt="mentor" className="each-mentor-img" />
+                    <img
+                      src={personImg}
+                      alt="mentor"
+                      className="each-mentor-img"
+                    />
                   </div>
                   <div className="each-mentor-details">
                     <Typography

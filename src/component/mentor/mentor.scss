@@ -24,6 +24,10 @@
         padding-bottom: 2px !important;
         padding: 10px;
     }
+    #cardContain{
+        display: flex;
+        flex-wrap: wrap;
+    }
     #mentorName{
         margin: 2px 15px !important ;
     }
@@ -76,6 +80,18 @@
     }
     #firstPart , #cardContain {
     margin: 0 auto;
+    }
+    .iconButtonMenu{
+        padding: 0 !important;
+    }
+    .openMenu{
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+    .eachMentorCard{
+        width: 22% !important ;
+        margin: 10px 1%;
     }
 }
 @media screen and (max-width: 400px) {
