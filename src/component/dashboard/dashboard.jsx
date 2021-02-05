@@ -30,14 +30,11 @@ const Dashboard = () => {
     return new Promise((resolve) => {
       setTimeout(
         () => resolve(import("../mainDashboard/MainDashboard.jsx")),
-        2000
+        5000
       );
     });
   });
-  // className={clsx("dashboard-side-navbar", {
-  //   "dashboard-side-navbar-active":
-  //     this.state.sideNavOpen
-  // })}
+  
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">

@@ -32,8 +32,11 @@ class AppBar extends Component {
   };
 
   toggleNavBar = () => {
-    console.log("toggleNavBar reached");
-    this.props.setSideNavOpen(!this.props.sideNavOpen);
+    console.log("toggleNavBar reached" + window.screen.availWidth);
+    if (window?.screen.availWidth > 600) {
+      this.props.setSideNavOpen(!this.props.sideNavOpen);
+      let val = null ?? "hello"
+    }
   };
   render() {
     return (
@@ -43,16 +46,23 @@ class AppBar extends Component {
             <IconButton
               className="navBar-toggle-button"
               onClick={() => this.toggleNavBar()}
+              data-testid="navBarToggleButton"
             >
               <MenuIcon fontSize="small" />
             </IconButton>
-            <img src={lms} alt="lms-logo" className="lms-logo" />
+            <img
+              src={lms}
+              alt="lms-logo"
+              className="lms-logo"
+              data-testid="lmsLogo"
+            />
           </div>
           <div className="app-prifile-button">
             <div className="appbar-action-button">
               <IconButton
                 onClick={() => this.showProfile()}
                 className="profile-icon-button"
+                data-testid="showProfile"
               >
                 <PersonOutlineOutlinedIcon fontSize="small" />
               </IconButton>
@@ -60,7 +70,7 @@ class AppBar extends Component {
           </div>
         </div>
         {this.state.isProfileClicked && (
-          <Card className="profile-card">
+          <Card className="profile-card" data-testid="profileCard">
             <CardContent className="profile-contant">
               <div className="person-picture">
                 <img src={vsCodeLogo} alt="person" className="person-image" />

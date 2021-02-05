@@ -70,7 +70,7 @@ class MainDashboard extends Component {
               DASHBOARD DETAILS
             </Typography>
             <div className="all-cource-details">
-              {this.props.allCource.map((eachCource) => (
+              {this.props.allCource && this.props.allCource.map((eachCource) => (
                 <Card
                   key={eachCource.courceID}
                   // onClick={() => this.showPerticularCource(eachData)}
