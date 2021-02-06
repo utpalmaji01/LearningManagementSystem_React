@@ -87,6 +87,7 @@ class Course extends React.Component {
                   label="Course id"
                   variant="outlined"
                   size="small"
+                  data-testid="courseID"
                 />
               </div>
 
@@ -97,6 +98,7 @@ class Course extends React.Component {
                   label="Course Name"
                   variant="outlined"
                   size="small"
+                  data-testid="courseName"
                 />
               </div>
               <div className="student-buttton-container">
@@ -128,6 +130,7 @@ class Course extends React.Component {
                   label="Course id"
                   variant="outlined"
                   size="small"
+                  data-testid="courseIDAdd"
                 />
               </div>
 
@@ -138,6 +141,7 @@ class Course extends React.Component {
                   label="Course Name"
                   variant="outlined"
                   size="small"
+                  data-testid="courseNameAdd"
                 />
               </div>
               <div className="student-buttton-container">

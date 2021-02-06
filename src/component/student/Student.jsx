@@ -252,6 +252,7 @@ class Student extends React.Component {
             onClose={this.handleClose}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
+            data-testid="studentDialogAdd"
           >
             <div className="box-top-header">Add Student</div>
             <div className="box-content">
@@ -264,6 +265,7 @@ class Student extends React.Component {
                     label="Student id"
                     variant="outlined"
                     size="small"
+                    data-testid="StudentID"
                   />
                 </div>
 
@@ -274,6 +276,7 @@ class Student extends React.Component {
                     label="Name"
                     variant="outlined"
                     size="small"
+                    data-testid="StudentName"
                   />
                 </div>
                 <div className="text-fields-student">
@@ -283,6 +286,7 @@ class Student extends React.Component {
                     label="Email id"
                     variant="outlined"
                     size="small"
+                    data-testid="StudentEmailId"
                   />
                 </div>
                 <div className="text-fields-student">
@@ -292,6 +296,7 @@ class Student extends React.Component {
                     label="Mobile Number"
                     variant="outlined"
                     size="small"
+                    data-testid="StudentMobileNumber"
                   />
                 </div>
                 <div className="text-fields-student">
@@ -308,12 +313,14 @@ class Student extends React.Component {
                       native: true,
                     }}
                     variant="outlined"
+                    data-testid="StudentCourseDropDownMenu"
                   >
                     {currencies.map((option) => (
                       <option key={option.value} value={option.value}>
                         {option.label}
                       </option>
                     ))}
+                    
                   </TextField>
                 </div>
                 <div className="text-fields-student">
@@ -330,6 +337,7 @@ class Student extends React.Component {
                       native: true,
                     }}
                     variant="outlined"
+                    data-testid="StudentMentorDropDownMenu"
                   >
                     {mentors.map((option) => (
                       <option key={option.value} value={option.value}>
