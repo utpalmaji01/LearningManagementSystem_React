@@ -66,6 +66,7 @@ class MainDashboard extends Component {
             <Typography
               variant="body1"
               className="main-dashboard-container-header"
+              data-testid="main-dashboard-container-header"
             >
               DASHBOARD DETAILS
             </Typography>
@@ -75,6 +76,7 @@ class MainDashboard extends Component {
                   key={eachCource.courceID}
                   // onClick={() => this.showPerticularCource(eachData)}
                   className="each-cource"
+                  data-testid="each-cource"
                 >
                   <CardContent className="each-cource-contant">
                     <div className="cource-title-action">

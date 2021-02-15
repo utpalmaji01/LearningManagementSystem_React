@@ -37,7 +37,7 @@ const Dashboard = () => {
   
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
+      <div className="dashboard-header" data-testid="dashboard-header">
         <AppBar sideNavOpen={sideNavOpen} setSideNavOpen={setSideNavOpen} />
       </div>
       <div className="dashboard-body">
