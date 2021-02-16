@@ -1,5 +1,6 @@
 import React from 'react';
 import './userProfile.scss';
+import proImg from '../../assets/image/proImg.png';
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Avatar from '@material-ui/core/Avatar';
@@ -12,7 +13,7 @@ const UserProfile = () => {
             </div>
             <div className="profileDisplay" >
                 <div className="profileImage" >
-                <Avatar alt="Remy Sharp" id="mPic" src="/static/images/avatar/1.jpg" />
+                <Avatar alt="Remy Sharp" id="mPic" src={proImg} />
                 </div>
                 <div className="profileDetails" >
                     <p id="mName">Mentor Name</p>

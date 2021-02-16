@@ -36,6 +36,18 @@ class adminServices {
       process.env.REACT_APP_FETCH_ALL_STUDENTS_PATH
     );
   };
+
+  deleteMentor = (value) => {
+    // let header = {
+    //   headers: {
+    //     'mID' : mID
+    //   }
+    // };
+    console.log(process.env.REACT_APP_FETCH_ALL_MENTORS_PATH);
+    return axiosServices.deleteServices(
+      process.env.REACT_APP_FETCH_ALL_MENTORS_PATH + value
+    );
+  };
 }
 
 export default new adminServices();
