@@ -2,7 +2,7 @@ import { render, fireEvent } from "@testing-library/react";
 import { shallow, mount } from "enzyme"; 
 import LogIn from "./LogIn.jsx";
 
-describe("LogIn component", () => {
+describe.skip("LogIn component", () => {
   test("LogIn component render without crashing", () => {
     render(<LogIn />);
   });
