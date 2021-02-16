@@ -10,7 +10,7 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
-import vsCodeLogo from "../../assets/image/vsCodeLogo.png";
+import personImg from "../../assets/image/personImg.png";
 import { Menu as MenuIcon } from "@material-ui/icons";
 import history from "../../History.js";
 import "./appbar.scss";
@@ -33,10 +33,10 @@ class AppBar extends Component {
 
   toggleNavBar = () => {
     console.log("toggleNavBar reached" + window.screen.availWidth);
-    if (window?.screen.availWidth > 600) {
-      this.props.setSideNavOpen(!this.props.sideNavOpen);
-      let val = null ?? "hello"
-    }
+    this.props.setSideNavOpen(!this.props.sideNavOpen);
+    // if (window?.screen.availWidth > 600) {
+    //   this.props.setSideNavOpen(!this.props.sideNavOpen);
+    // }
   };
   render() {
     return (
@@ -70,10 +70,10 @@ class AppBar extends Component {
           </div>
         </div>
         {this.state.isProfileClicked && (
-          <Card className="profile-card" data-testid="profileCard">
+          <Card className="profile-card" data-testid="profileCard"> 
             <CardContent className="profile-contant">
               <div className="person-picture">
-                <img src={vsCodeLogo} alt="person" className="person-image" />
+                <img src={personImg} alt="person" className="person-image" />
               </div>
               <div className="profile-contant-details">
                 <Typography variant="h6" className="person-name">

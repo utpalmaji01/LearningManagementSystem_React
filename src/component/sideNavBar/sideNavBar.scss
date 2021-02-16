@@ -41,8 +41,14 @@
     .list-item-text {
       display: none;
     }
-    .list-item-text.sideNav-list-item-text-active {
+    .list-item-text.sideNav-list-item-text-active { 
       display: block;
+      @media screen and (max-width: $break-medium) {
+        display: block;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        display: none;
+      }
     }
   }
   .sideNav-list-item.sideNav-list-item-active {
