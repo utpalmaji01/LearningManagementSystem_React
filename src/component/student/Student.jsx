@@ -405,7 +405,7 @@ class Student extends React.Component {
               </div>
             </div>
           </div>
-          <div>
+          <div className='table-main'>
             <TableContainer component={Paper}>
               <Table className="njn" aria-label="customized table">
                 <TableHead>
