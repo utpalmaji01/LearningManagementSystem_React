@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './mentor.scss';
+import React, { useState, useEffect } from "react";
+import "./mentor.scss";
 import {
-  Divider, IconButton, Card, Button, Menu,
+  Divider,
+  IconButton,
+  Card,
+  Button,
+  Menu,
   MenuItem,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
+  Avatar,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
-import MentorDialog from '../MentorFormDialog/MentorDialog';
-import axiosServices from "../../services/axios_service.js";
-import adminServices from '../../services/admin_service.js';
+import MentorDialog from "../MentorFormDialog/MentorDialog";
+import adminServices from "../../services/admin_service.js";
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +31,6 @@ const useStyles = makeStyles({
   },
 });
 
-
 const Mentor = (props) => {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -46,68 +48,73 @@ const Mentor = (props) => {
   };
 
   const getAllMentors = () => {
-    adminServices
-          .fetchAllMentors()
-          .then((responce) => {
-            console.log(responce);
-            setAllMentors(responce.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+    adminServices.fetchAllMentors().then((responce) => {
+        console.log(responce);
+        setAllMentors(responce.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const deleteMentor = (eachMentor) => {
+    adminServices.deleteMentor(eachMentor).then((responce) => {
+      console.log(responce);
+      setAllMentors(responce.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   const handleClickOpenMenu = (event) => {
     setAnchorEl(event.currentTarget);
-  }
+  };
   const handleCloseMenu = () => {
     setAnchorEl(null);
-  }
-  const deleteMentor = (eachMentor) => {
-    console.log(eachMentor.mId);
-    let value = eachMentor.mId;
-    console.log(value);
-    adminServices
-          .deleteMentor(value)
-          .then((responce) => {
-            console.log(responce);
-            alert("deleted")
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-  }
+  };
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <>
-      <div className="mentorContainer" >
-        <div id="firstPart" >
-          <p id="mentorPara" >Mentor Details</p>
-          <Button variant="contained" onClick={handleClickOpen} id="mentorBtn" color="primary">
+      <div className="mentorContainer">
+        <div id="firstPart">
+          <p id="mentorPara">Mentor Details</p>
+          <Button
+            variant="contained"
+            onClick={handleClickOpen}
+            id="mentorBtn"
+            color="primary"
+          >
             Add Mentor
-                 </Button>
+          </Button>
         </div>
         <div id="cardContain">
           {allMentors.map((eachMentor) => (
-            <Card key={eachMentor.mID} className="eachMentorCard" variant="outlined">
-              <div id="displayArea" >
-                <div id="imageArea" >
+            <Card
+              key={eachMentor.mID}
+              className="eachMentorCard"
+              variant="outlined"
+              id="mentorCard"
+            >
+              <div id="displayArea">
+                <div id="imageArea">
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                 </div>
-                <div id="nameArea" >
-                  <p id="mentorName" >{eachMentor.mName}</p>
+                <div id="nameArea">
+                  <p id="mentorName">{eachMentor.mName}</p>
                   <p id="mentorId">{eachMentor.mID}</p>
-                  <p id="mentorMail" >{eachMentor.email}</p>
+                  <p id="mentorMail">Mentor Mail</p>
                 </div>
                 <div className="openMenu">
                   <IconButton
                     aria-controls="cource-menu"
                     aria-haspopup="true"
                     onClick={handleClickOpenMenu}
-                    className="cource-action-button" className="iconButtonMenu"
+                    className="cource-action-button"
+                    className="iconButtonMenu"
                   >
                     <MoreVertIcon fontSize="small" />
                   </IconButton>
@@ -139,22 +146,26 @@ const Mentor = (props) => {
               </div>
               {/* <div id="borderDiv" /> */}
               <Divider className="divide" />
-              <div id="content" >
-                <p id="cName" >Course Name</p>
-                <p id="nStud" >No. of Students</p>
+              <div id="content">
+                <p id="cName">Course Name</p>
+                <p id="nStud">No. of Students</p>
               </div>
-              <div id="classContainer" >
-                <p id="course" >Java Full Stack</p>
+              <div id="classContainer">
+                <p id="course">Java Full Stack</p>
                 <div id="studNumber">
-                  <p id="studN" >25</p>
+                  <p id="studN">25</p>
                 </div>
               </div>
             </Card>
           ))}
         </div>
       </div>
-      <MentorDialog open={open} handleClickOpen={handleClickOpen} handleClose={handleClose} />
+      <MentorDialog
+        open={open}
+        handleClickOpen={handleClickOpen}
+        handleClose={handleClose}
+      />
     </>
-  )
-}
+  );
+};
 export default Mentor;

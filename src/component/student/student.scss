@@ -1,3 +1,4 @@
+@import "../../breakPoints" ;
 .student-outer-container {
   width: 90%;
   margin: 0 auto;
@@ -42,6 +43,7 @@
     cursor: pointer;
   }
 }
+
 td {
   border-left: 1px solid #dcdcdc !important;
   border-right: 1px solid #dcdcdc !important;
@@ -117,7 +119,7 @@ td {
     .text-fields-student {
       margin: 1px 0px;
       width: 100%;
-     .MuiFormControl-root{
+      .MuiFormControl-root {
         margin: 8px auto !important;
         width: 100% !important;
       }
@@ -150,5 +152,17 @@ td {
         cursor: pointer;
       }
     }
+  }
+}
+@media screen and (max-width: $break-small) {
+  .table-main {
+    width: 300px;
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 330px) {
+  .table-main {
+    width: 250px;
+    overflow: auto;
   }
 }

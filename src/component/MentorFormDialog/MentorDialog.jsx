@@ -26,7 +26,7 @@ const MentorDialog = (props) => {
   return (
     <Dialog open={props.open} onClose={props.handleClose} aria-labelledby="form-dialog-title" className="addMentorDialog" >
       
-      <div className="addMentor" >Add Mentor</div>
+      <div className="addMentor" id="addMentorBtn" >Add Mentor</div>
         <div className="fullDialog" >
         <DialogContent>
         <TextField

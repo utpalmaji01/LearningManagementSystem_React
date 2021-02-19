@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import clsx from "clsx";
 import AppBar from "../appBar/Appbar.jsx";
@@ -7,6 +7,7 @@ import Loader from "../lazyLoading/Loading.jsx";
 import Mentor from "../mentor/Mentor.jsx";
 import UserProfile from "../userProfile/userProfile.jsx";
 import Student from "../student/Student.jsx";
+import MainDashboard from "../mainDashboard/MainDashboard.jsx";
 import adminServices from "../../services/admin_service.js";
 import Course from "../course/Course.jsx";
 import "./dashboard.scss";
@@ -27,15 +28,6 @@ const Dashboard = () => {
       });
   }, []);
 
-  const MainDashboard = lazy(() => {
-    return new Promise((resolve) => {
-      setTimeout(
-        () => resolve(import("../mainDashboard/MainDashboard.jsx")),
-        5000
-      );
-    });
-  });
-  
   return (
     <div className="dashboard-container">
       <div className="dashboard-header" data-testid="dashboard-header">
@@ -62,11 +54,7 @@ const Dashboard = () => {
           <Switch>
             <Route
               path="/dashboard/main"
-              component={() => (
-                <Suspense fallback={<Loader />}>
-                  <MainDashboard allCource={allCource} />
-                </Suspense>
-              )}
+              component={() => <MainDashboard allCource={allCource} />}
             />
             <Route path="/dashboard/Mentor" component={() => <Mentor />} />
             <Route

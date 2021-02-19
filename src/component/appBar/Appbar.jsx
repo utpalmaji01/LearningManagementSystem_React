@@ -32,11 +32,7 @@ class AppBar extends Component {
   };
 
   toggleNavBar = () => {
-    console.log("toggleNavBar reached" + window.screen.availWidth);
-    if (window?.screen.availWidth > 600) {
-      this.props.setSideNavOpen(!this.props.sideNavOpen);
-      let val = null ?? "hello"
-    }
+    this.props.setSideNavOpen(!this.props.sideNavOpen);
   };
 
   profileOpen = () => {
@@ -75,13 +71,13 @@ class AppBar extends Component {
           </div>
         </div>
         {this.state.isProfileClicked && (
-          <Card className="profile-card" data-testid="profileCard">
+          <Card className="profile-card" data-testid="profileCard"> 
             <CardContent className="profile-contant">
               <div className="person-picture">
                 <img src={avik} alt="person" className="person-image" />
               </div>
               <div className="profile-contant-details">
-                <Typography variant="h6" className="person-name" onclick={this.profileOpen}>
+                <Typography variant="h6" className="person-name" onclick={() => this.profileOpen()}>
                   Avik Das
                 </Typography>
                 <Typography variant="body2" className="person-email">
