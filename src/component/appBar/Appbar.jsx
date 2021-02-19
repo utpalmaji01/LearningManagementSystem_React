@@ -32,12 +32,9 @@ class AppBar extends Component {
   };
 
   toggleNavBar = () => {
-    console.log("toggleNavBar reached" + window.screen.availWidth);
     this.props.setSideNavOpen(!this.props.sideNavOpen);
-    // if (window?.screen.availWidth > 600) {
-    //   this.props.setSideNavOpen(!this.props.sideNavOpen);
-    // }
   };
+  
   render() {
     return (
       <>

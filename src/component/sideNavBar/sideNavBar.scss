@@ -2,14 +2,6 @@
 @import "../../breakPoints";
 
 .sideNavBar-container {
-  &:hover {
-    .sideNavBar-list .list-item-text {
-      display: block;
-      // .list-item-text {
-      //   display: block;
-      // }
-    }
-  }
   .sideNavBar-list {
     padding: 0;
 
@@ -19,9 +11,6 @@
       border-left: 5px solid $color-white;
       padding-left: 10px;
       justify-content: flex-start;
-      // @media screen and (max-width: $break-xsmall) {
-      //   padding: 5px 8px;
-      // }
     }
     .list-item-icon {
       min-width: 30px;
@@ -43,12 +32,6 @@
     }
     .list-item-text.sideNav-list-item-text-active { 
       display: block;
-      @media screen and (max-width: $break-medium) {
-        display: block;
-      }
-      @media screen and (max-width: $break-xsmall) {
-        display: none;
-      }
     }
   }
   .sideNav-list-item.sideNav-list-item-active {
