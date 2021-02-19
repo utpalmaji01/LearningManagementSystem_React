@@ -13,9 +13,7 @@ import Paper from "@material-ui/core/Paper";
 import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import axiosServices from "../../services/axios_service.js";
 import adminServices from "../../services/admin_service.js";
-import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
@@ -214,7 +212,7 @@ class Student extends React.Component {
         })
       })
       .catch((error) => {
-        console.log(error);
+        console.log("error", error);
       });
   }
   handleChangemenu1 = (event) => {
