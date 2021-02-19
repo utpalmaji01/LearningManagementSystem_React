@@ -52,6 +52,8 @@
   }
 }
 .single-card-course {
+  margin: 9px;
+  min-width: 225px;
   width: 30%;
   height: 113px;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -71,27 +73,41 @@
       font-size: 16px;
     }
   }
- 
 
   .course-card-code {
     padding: 8px;
   }
+ 
+}
+.outer-course-map-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  
+}
+.outer-card-container {
+  width: min-content;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
 }
 
-
-
 @media screen and (max-width: 600px) {
+  .outer-card-container {
+    display: flex;
+    flex-flow: wrap;
+  }
   .single-card-course {
     width: 99% !important;
+    margin-bottom: 12px;
   }
   .course-card-title {
     padding: 3%;
   }
   .header-student {
     flex-direction: column !important;
-    .header-student-text{
+    .header-student-text {
       margin: 12px 0px;
     }
   }
 }
-

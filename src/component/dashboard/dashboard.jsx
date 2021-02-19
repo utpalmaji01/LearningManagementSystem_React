@@ -5,6 +5,7 @@ import AppBar from "../appBar/Appbar.jsx";
 import SidenavBar from "../sideNavBar/SidenavBar.jsx";
 import Loader from "../lazyLoading/Loading.jsx";
 import Mentor from "../mentor/Mentor.jsx";
+import UserProfile from "../userProfile/userProfile.jsx";
 import Student from "../student/Student.jsx";
 import adminServices from "../../services/admin_service.js";
 import Course from "../course/Course.jsx";
@@ -30,17 +31,14 @@ const Dashboard = () => {
     return new Promise((resolve) => {
       setTimeout(
         () => resolve(import("../mainDashboard/MainDashboard.jsx")),
-        2000
+        5000
       );
     });
   });
-  // className={clsx("dashboard-side-navbar", {
-  //   "dashboard-side-navbar-active":
-  //     this.state.sideNavOpen
-  // })}
+  
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
+      <div className="dashboard-header" data-testid="dashboard-header">
         <AppBar sideNavOpen={sideNavOpen} setSideNavOpen={setSideNavOpen} />
       </div>
       <div className="dashboard-body">
@@ -75,11 +73,15 @@ const Dashboard = () => {
               path="/dashboard/Student"
               component={() => (
                 <Suspense fallback={<Loader />}>
-                  <Student allCource={allCource} />
+                  <Student />
                 </Suspense>
               )}
             />
             <Route path="/dashboard/Course" component={() => <Course />} />
+            <Route
+              path="/dashboard/profile"
+              component={() => <UserProfile /> }
+            />
           </Switch>
         </div>
       </div>

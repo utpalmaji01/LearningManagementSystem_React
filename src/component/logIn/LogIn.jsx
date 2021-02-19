@@ -153,6 +153,8 @@ class LogIn extends Component {
               }}
               onBlur={(e) => this.validateLogIn(e)}
               className="login-email"
+              data-testid="loginEmail"
+
             />
             <TextField
               fullWidth
@@ -169,6 +171,7 @@ class LogIn extends Component {
               }}
               onBlur={(e) => this.validateLogIn(e)}
               className="login-password"
+              data-testid="loginPassword"
               InputProps={{
                 // <-- toggle button is added.
                 endAdornment: (
@@ -177,6 +180,7 @@ class LogIn extends Component {
                       className="toggle-password-eye"
                       aria-label="toggle password visibility"
                       onClick={this.handleClickShowPassword}
+                      data-testid="togglePasswordEye"
                     >
                       {this.state.showPassword ? (
                         <Visibility />

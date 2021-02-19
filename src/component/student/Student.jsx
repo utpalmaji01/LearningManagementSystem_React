@@ -13,6 +13,7 @@ import Paper from "@material-ui/core/Paper";
 import Dialog from "@material-ui/core/Dialog";
 import CloseIcon from "@material-ui/icons/Close";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import axiosServices from "../../services/axios_service.js";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -72,118 +73,118 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(
-  Student_ID,
-  Name,
-  Email_ID,
-  Mobile_No,
-  Course,
-  Mentor,
-  Current_score
-) {
-  return {
-    Student_ID,
-    Name,
-    Email_ID,
-    Mobile_No,
-    Course,
-    Mentor,
-    Current_score,
-  };
-}
+// function createData(
+//   Student_ID,
+//   Name,
+//   Email_ID,
+//   Mobile_No,
+//   Course,
+//   Mentor,
+//   Current_score
+// ) {
+//   return {
+//     Student_ID,
+//     Name,
+//     Email_ID,
+//     Mobile_No,
+//     Course,
+//     Mentor,
+//     Current_score,
+//   };
+// }
 
-const rows = [
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-  createData(
-    "id17354",
-    "Abhds sdddaa",
-    "kkkasdk@gmail.com ",
-    12213546667,
-    "courceABCD",
-    "mentor1",
-    "4.5/5"
-  ),
-];
+// const rows = [
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+//   createData(
+//     "id17354",
+//     "Abhds sdddaa",
+//     "kkkasdk@gmail.com ",
+//     12213546667,
+//     "courceABCD",
+//     "mentor1",
+//     "4.5/5"
+//   ),
+// ];
 
 const useStyles = makeStyles({
   table: {
@@ -199,9 +200,22 @@ class Student extends React.Component {
       menu1: "Java Full Stack",
       menu2: "Mentor1",
       openUploadDialog: false,
+      allStudentData: null,
     };
   }
-  
+  componentDidMount(){
+    axiosServices
+      .getServices("http://localhost:3000/students")
+      .then((responce) => {
+        console.log(responce);
+        this.setState({
+          allStudentData: responce.data,
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   handleChangemenu1 = (event) => {
     this.setState({ menu1: event.target.value });
   };
@@ -408,14 +422,14 @@ class Student extends React.Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {this.props.allCource &&
-                    this.props.allCource.map((row) => (
-                      <StyledTableRow key={row.name}>
+                  {this.state.allStudentData &&
+                    this.state.allStudentData .map((row) => (
+                      <StyledTableRow key={row.sId}>
                         <StyledTableCell component="th" scope="row">
                           {row.sId}
                         </StyledTableCell>
                         <StyledTableCell align="right">
-                          {row.Name}
+                          {row.sName}
                         </StyledTableCell>
                         <StyledTableCell align="right">
                           {row.email}
@@ -424,13 +438,13 @@ class Student extends React.Component {
                           {row.mobileNo}
                         </StyledTableCell>
                         <StyledTableCell align="right">
-                          {row.Course}
+                        {row.assignCourcesId}
                         </StyledTableCell>
                         <StyledTableCell align="right">
                           {row.assignMentorsId}
                         </StyledTableCell>
                         <StyledTableCell align="right">
-                          {row.assignCourcesId}
+                          4.5
                         </StyledTableCell>
                       </StyledTableRow>
                     ))}
