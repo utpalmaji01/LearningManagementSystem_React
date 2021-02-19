@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import axiosServices from "../../services/axios_service.js";
+import adminServices from "../../services/admin_service.js";
 import "./course.scss";
 
 class Course extends React.Component {
@@ -20,8 +21,8 @@ class Course extends React.Component {
     };
   }
   componentDidMount() {
-    axiosServices
-      .getServices("http://localhost:3000/cources")
+    adminServices
+      .fetchAllCourse()
       .then((responce) => {
         console.log(responce);
         this.setState({
